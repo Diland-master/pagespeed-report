@@ -355,6 +355,113 @@
     font-size: 12px;
     color: #333;
     font-weight: 500;
+    word-break: break-all;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    body {
+      padding: 20px 16px;
+    }
+
+    /* Header */
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .header-left h1 { font-size: 18px; }
+
+    /* Score hero */
+    .score-hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 20px;
+      gap: 20px;
+    }
+
+    .score-info h2 { font-size: 20px; }
+
+    .score-info .score-target {
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    /* Metrics table — stack columns */
+    .metrics-table .table-header {
+      display: none; /* hide header on mobile, labels shown inline */
+    }
+
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      padding: 14px 16px;
+    }
+
+    .metric-name {
+      width: 100%;
+      font-size: 13px;
+    }
+
+    .metric-name .abbr { font-size: 11px; }
+
+    .metric-now { font-size: 15px; }
+
+    .metric-target {
+      font-size: 12px;
+      align-self: center;
+    }
+
+    .metric-target::before {
+      content: '→ ';
+      color: #444;
+    }
+
+    .status-badge {
+      width: 26px;
+      height: 26px;
+      font-size: 13px;
+      margin-left: auto;
+    }
+
+    /* Steps — single column */
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .step-card.full-width {
+      grid-column: 1;
+    }
+
+    .step-items[style] {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .step-gain {
+      font-size: 12px;
+      padding: 3px 8px;
+    }
+
+    .step-title { font-size: 13px; }
+    .step-economy { font-size: 11px; }
+
+    /* Forecast */
+    .forecast-row {
+      padding: 12px 16px;
+      gap: 8px;
+    }
+
+    .forecast-label { font-size: 12px; }
+    .forecast-gain { font-size: 12px; white-space: nowrap; }
+
+    .forecast-row:last-child .forecast-label { font-size: 13px; }
+    .forecast-row:last-child .forecast-gain { font-size: 14px; }
   }
 </style>
 </head>
@@ -559,9 +666,9 @@
       </div>
       <ul class="step-items" style="display:grid;grid-template-columns:1fr 1fr;gap:5px 24px;">
         <li>Cloudflare (бесплатно) — 20 мин → +5–10 баллов</li>
-        <!-- <li>Убрать Elementor (если используется) → +20–30</li> -->
+        <li>Убрать Elementor (если используется) → +20–30</li>
         <li>VPS Москва + NGINX + Redis — 1–2 дня → +15–25</li>
-        <!-- <li>Статическая генерация (Simply Static) → +40–50</li> -->
+        <li>Статическая генерация (Simply Static) → +40–50</li>
       </ul>
     </div>
 
